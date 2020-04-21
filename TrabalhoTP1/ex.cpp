@@ -1,6 +1,4 @@
 #include"mylib.h"
-//MENU
-
 
 void ex1(){
 

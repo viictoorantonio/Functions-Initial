@@ -128,38 +128,38 @@ void caixa_com_texto_centralizado(int length, char border, string text){
 void troca(int* pt_a, int* pt_b,int* pt_c){
     int aux;
     if(*pt_a >= *pt_b){
-        if(*pt_b >= *pt_c){//A MAIOR C MENOR 5 2 1
-            aux = *pt_a;//5
-            *pt_a = *pt_c;//1
-            *pt_c = aux;//5
+        if(*pt_b >= *pt_c){
+            aux = *pt_a;
+            *pt_a = *pt_c;
+            *pt_c = aux;
         }
-        else{// A MAIOR QUE B E C MAIOR QUE B
-            if(*pt_a >= *pt_c){// A MAIOR B MENOR 5 1 2
-                aux = *pt_a;//5
-                *pt_a = *pt_b;//1
-                *pt_b = *pt_c;//2
-                *pt_c = aux;//5
+        else{
+            if(*pt_a >= *pt_c){
+                aux = *pt_a;
+                *pt_a = *pt_b;
+                *pt_b = *pt_c;
+                *pt_c = aux;
             }
-            else{// C MAIOR B MENOR 2 1 5
-                aux = *pt_a;//2
-                *pt_a = *pt_b;//1
-                *pt_b = aux;//2
+            else{
+                aux = *pt_a;
+                *pt_a = *pt_b;
+                *pt_b = aux;
             }
        }
     }
-    else{// A MENOR QUE B E
-        if(*pt_b >= *pt_c){//B MAIOR A MENOR 1 5 2
-            aux = *pt_b;//5
-            *pt_b = *pt_c;//2
-            *pt_c = aux;//5
+    else{
+        if(*pt_b >= *pt_c){
+            aux = *pt_b;
+            *pt_b = *pt_c;
+            *pt_c = aux;
         }
     }
-    if(*pt_c>= *pt_a){// A MENOR QUE C
-        if(*pt_a >= *pt_b){ // B MENOR QUE A
-           //C MAIOR B MENOR 2 1 5
-            aux = *pt_a;//2
-            *pt_a = *pt_b;//1
-            *pt_b = aux;//2
+    if(*pt_c>= *pt_a){
+        if(*pt_a >= *pt_b){
+
+            aux = *pt_a;
+            *pt_a = *pt_b;
+            *pt_b = aux;
         }
     }
 }
@@ -203,7 +203,7 @@ int toInt(char* p){
     }
     return num;
 }
-//2B3 SUBTRAI ESPAÃ‡O
+//2B3 SUBTRAI ESPACO
 string substr(string s){
     string t = "";
     int i = 0;
