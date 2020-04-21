@@ -59,42 +59,6 @@ bool reg(int num){
     }
     return is_reg;
 }
-//1B10 FATORIAL
-long long int fat(int num){
-    unsigned long long int result = 1;
-    for(int i = 2; i <= num; i++)
-        result *= i;
-    return result;
-}
-long long int comb(int n, int p){
-    long int comb = fat(n)/( fat(p) * fat(n-p) );
-    return comb;
-}
-//1C3 PALINDROMO
-bool palindromo(string palavra){
-    bool palidromo = true;
-    string aux = palavra;
-    reverse( palavra.begin(), palavra.end() );
-    for (int i=0;i<(int)palavra.length();i++){
-        if(palavra[i] != aux[i])
-            palidromo = false;
-    }
-    return palidromo;
-}
-//1C5 CONVERTE PARA MINUSCULA
-string to_lower_case(string palavra){
-    string pal = "";
-    for( int i=0; i<(int)palavra.size(); i++ )
-        pal+= ( palavra[i] >= 'A' && palavra[i] <= 'Z')? ( palavra[i] -'A'+'a' ): palavra[i];
-    return pal;
-}
-//1C6 COVERTE PARA MAIUSCULO
-string to_upper_case(string palavra){
-    string pal = "";
-    for( int i=0; i<(int)palavra.size(); i++ )
-        pal+= ( palavra[i] >= 'a' && palavra[i] <= 'z')? ( palavra[i] -'a'+'A' ): palavra[i];
-    return pal;
-}
 //1C7 CAIXA COM TEXTO CENTRALIZADO
 void caixa_com_texto_centralizado(int length, char border, string text){
     int sizeText = text.end() - text.begin();
@@ -162,6 +126,42 @@ void troca(int* pt_a, int* pt_b,int* pt_c){
             *pt_b = aux;
         }
     }
+}
+//1B10 FATORIAL
+long long int fat(int num){
+    unsigned long long int result = 1;
+    for(int i = 2; i <= num; i++)
+        result *= i;
+    return result;
+}
+long long int comb(int n, int p){
+    long int comb = fat(n)/( fat(p) * fat(n-p) );
+    return comb;
+}
+//1C3 PALINDROMO
+bool palindromo(string palavra){
+    bool palidromo = true;
+    string aux = palavra;
+    reverse( palavra.begin(), palavra.end() );
+    for (int i=0;i<(int)palavra.length();i++){
+        if(palavra[i] != aux[i])
+            palidromo = false;
+    }
+    return palidromo;
+}
+//1C5 CONVERTE PARA MINUSCULA
+string to_lower_case(string palavra){
+    string pal = "";
+    for( int i=0; i<(int)palavra.size(); i++ )
+        pal+= ( palavra[i] >= 'A' && palavra[i] <= 'Z')? ( palavra[i] -'A'+'a' ): palavra[i];
+    return pal;
+}
+//1C6 COVERTE PARA MAIUSCULO
+string to_upper_case(string palavra){
+    string pal = "";
+    for( int i=0; i<(int)palavra.size(); i++ )
+        pal+= ( palavra[i] >= 'a' && palavra[i] <= 'z')? ( palavra[i] -'a'+'A' ): palavra[i];
+    return pal;
 }
 //2A3 TAMANHO STRING
 int strlen(char* str){
@@ -377,10 +377,6 @@ int** newmat(int l, int c){
     for(int i=0;i<l;i++) mat[i] = new int[c];
     return mat;
 }
-void deletemat(int**m,int l){
-    for(int i=0;i<l;i++) delete m[i];
-    delete [] m;
-}
 void coutmat(int** m, int l, int c){
     for(int i=0;i<l;i++){
         for(int j=0;j<c;j++) cout << m[i][j] << ' ';
@@ -393,4 +389,8 @@ int** soma_matriz(int** A, int** B, int l, int c){
         for(int j=0;j<c;j++) C[i][j] = A[i][j] + B[i][j];
     }
     return C;
+}
+void deletemat(int**m,int l){
+    for(int i=0;i<l;i++) delete m[i];
+    delete [] m;
 }
