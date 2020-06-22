@@ -3,5 +3,3 @@
 
 * Nesse trabalho foi desempenhado o uso de funções, alocações de memoria, proprias bibliotecas, ponteiros, referencias e etc...
 
-
-![Coração](https://i.imgur.com/NbM4vpng.jpg)
